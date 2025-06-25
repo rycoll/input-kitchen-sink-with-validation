@@ -5,10 +5,10 @@ configuration:
   rgba_input: rgba(3, 74, 216, 0.5)
   hex_input: '#abcdef'
   hexa_input: '#abcdefff'
-  hsv_input: hsv(220, 98.6, 84.7)
-  hsva_input: hsva(220, 98.6, 84.7, 0.5)
-  hsl_input: hsl(220, 97.3, 42.9)
-  hsla_input: hsla(220, 97.3, 42.9, 0.5)
+  hsv_input: hsv(220, 99%, 85%)
+  hsva_input: hsva(220, 99%, 85%, 0.5)
+  hsl_input: hsl(220, 97%, 43%)
+  hsla_input: hsla(220, 97%, 43%, 0.5)
 convention:
   color: '#abcdef'
   my_color: '#abcdef'
@@ -35,8 +35,9 @@ valid:
   quoted_color: '#abcdef'
 options:
   null_color:
-  string_color:
-
+  string_color: ''
+  required_color: '#ab5353'
+  min_max_pattern_color: '#846b6b'
 _inputs:
   color_input:
     type: color
@@ -89,6 +90,17 @@ _inputs:
   options.null_color:
     options:
       empty_type: 'null'
+  options.required_color:
+    options:
+      empty_type: 'null'
+      required: true
+  options.min_max_pattern_color:
+    options:
+      empty_type: 'null'
+      pattern: ^#
+      pattern_message: Must be hex
+      min_length: 7
+      max_length: 7
   options.string_color:
     options:
       empty_type: string
