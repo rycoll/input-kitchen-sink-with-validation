@@ -1,6 +1,7 @@
 configuration:
   checkbox_input:
   checkbox_input_context:
+  required_boolean: false
 convention:
   should_be_true: true
   should_be_false: false
@@ -10,8 +11,11 @@ peek_a_boo:
   🐓: Cluck
 invalid:
   not_a_boolean: Hi there
-
 _inputs:
+  required_boolean:
+    type: checkbox
+    options:
+      required: true
   checkbox_input:
     type: checkbox
   checkbox_input_context:
