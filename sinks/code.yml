@@ -14,17 +14,14 @@ valid:
   null_code_block:
   empty_code_block: ''
   code_block: any string
-  multiline1_code_block: >
+  multiline1_code_block: |
     multiline
-
     string
-  multiline2_code_block: >-
+  multiline2_code_block: |-
     multiline
-
     string
-  multiline3_code_block: >+
+  multiline3_code_block: |
     multiline
-
     string
   multiline4_code_block: |
     multiline
@@ -32,7 +29,7 @@ valid:
   multiline5_code_block: |-
     multiline
     string
-  multiline6_code_block: |+
+  multiline6_code_block: |
     multiline
     string
 options:
@@ -47,8 +44,19 @@ options:
     say_hello
   null_code_block:
   string_code_block:
-
+  min_max_code_block: exit 0;
+  pattern_code_block: exit 0;
 _inputs:
+  min_max_code_block:
+    type: code
+    options:
+      min_length: 4
+      max_length: 10
+  pattern_code_block:
+    type: code
+    options:
+      pattern: '[0-9]'
+      pattern_message: This code block must contain a number.
   code_block_input:
     type: code
   code_block_input_context:
