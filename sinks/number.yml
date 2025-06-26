@@ -8,16 +8,16 @@ convention:
 valid:
   positive_number: 123456
   negative_number: -123456
-  e_number: 123456e78
-  e_positive_number: 123456e+78
-  e_negative_number: 123456e-78
+  e_number: 1.23456e+83
+  e_positive_number: 1.23456e+83
+  e_negative_number: 1.23456e-73
   positive_floating_number: 123.456
   negative_floating_number: -123.456
-  e_floating_number: 123.456e78
-  e_positive_floating_number: 123.456e+78
-  e_negative_floating_number: 123.456e-78
-  binary_number: 0b11110001001000000
-  hex_number: 0x1E240
+  e_floating_number: 1.23456e+80
+  e_positive_floating_number: 1.23456e+80
+  e_negative_floating_number: 1.23456e-76
+  binary_number: 123456
+  hex_number: 123456
   null_number:
 invalid:
   not_a_number: ''
@@ -25,8 +25,8 @@ options:
   between_1_and_10_whole_number: 5
   between_0_and_5_half_number: 3.5
   null_number:
+  required_number: 8
   number_number:
-
 _inputs:
   number_input:
     type: number
@@ -40,12 +40,12 @@ _inputs:
         # Example Instructions
 
         Great **content** here.
-  options.between_1_and_10_number:
+  options.between_1_and_10_whole_number:
     options:
       min: 1
       max: 10
       step: 1
-  options.between_0_and_5_number:
+  options.between_0_and_5_half_number:
     options:
       min: 0
       max: 5
@@ -53,6 +53,10 @@ _inputs:
   options.null_number:
     options:
       empty_type: 'null'
+  options.required_number:
+    options:
+      empty_type: 'null'
+      required: true
   options.number_number:
     options:
       empty_type: number
