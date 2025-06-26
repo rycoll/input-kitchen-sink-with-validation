@@ -1,18 +1,18 @@
 configuration:
-  date_input: 2020-07-15T12:00:00.000Z
-  date_input_context: 2020-07-15T12:00:00.000Z
+  date_input: 2020-07-15T12:00:00Z
+  date_input_context: 2020-07-15T12:00:00Z
 convention:
-  my_date: 2020-07-15T12:00:00.000Z
+  my_date: 2020-07-15T12:00:00Z
 valid:
   null_date:
   empty_date: ''
   unquoted_date: 2020-07-15T12:00:00Z
   quoted_date: '2020-07-15T12:00:00Z'
 options:
-  timezone_date: 2020-07-15T12:00:00.000Z
+  timezone_date: 2020-07-15T12:00:00Z
   null_date:
-  string_date:
-
+  string_date: ''
+  1990s_date: 1990-01-03T00:00:00Z
 _inputs:
   date_input:
     type: date
@@ -35,3 +35,7 @@ _inputs:
   options.string_date:
     options:
       empty_type: string
+  options.1990s_date:
+    options:
+      start_from: 1990-01-01T00:00:00Z
+      end_before: 2000-01-01T00:00:00Z
