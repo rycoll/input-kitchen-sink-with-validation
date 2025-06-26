@@ -6,12 +6,16 @@ convention:
   my_document: /documents/example.pdf
   my_document_path: /documents/example.pdf
 examples:
-  external_document: 'https://opensource.adobe.com/dc-acrobat-sdk-docs/pdfstandards/PDF32000_2008.pdf'
+  external_document: >-
+    https://opensource.adobe.com/dc-acrobat-sdk-docs/pdfstandards/PDF32000_2008.pdf
   file_local_document: /documents/example.pdf
 options:
   null_document:
-  string_document:
-
+  string_document: /
+  required_document: /
+  small_document: /uploads/sample.pdf
+  min_max_document: /exampledocument.pdf
+  pattern_document: /agouti.png
 _inputs:
   document_input:
     type: document
@@ -31,3 +35,18 @@ _inputs:
   options.string_document:
     options:
       empty_type: string
+  options.required_document:
+    options:
+      empty_type: 'null'
+      required: true
+  options.small_document:
+    options:
+      max_file_size: 500
+  options.min_max_document:
+    options:
+      min_length: 10
+      max_length: 20
+  options.pattern_document:
+    options:
+      pattern: agouti
+      pattern_message: Must be an agouti

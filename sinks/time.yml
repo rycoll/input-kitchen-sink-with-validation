@@ -8,11 +8,11 @@ valid:
   null_time:
   empty_time: ''
   12hr_time: 1:23 pm
-  24hr_time: 13:23:00
+  24hr_time: '13:23:00'
 options:
   null_time:
   string_time:
-
+  morning_time: 3:00 pm
 _inputs:
   time_input:
     type: time
@@ -32,3 +32,7 @@ _inputs:
   options.string_time:
     options:
       empty_type: string
+  options.morning_time:
+    options:
+      start_from: T00:00:00
+      end_before: T11:59:59
