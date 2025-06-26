@@ -1,16 +1,17 @@
 configuration:
-  html_input: 'Good <strong>stuff</strong>.'
-  html_input_context: 'Good <strong>stuff</strong>.'
+  html_input: Good <strong>stuff</strong>.
+  html_input_context: Good <strong>stuff</strong>.
 convention:
-  html: 'Good <strong>stuff</strong>.'
-  my_html: 'Good <strong>stuff</strong>.'
+  html: Good <strong>stuff</strong>.
+  my_html: Good <strong>stuff</strong>.
 options:
-  short_non_resizable_html: 'Good <strong>stuff</strong>.'
-  big_toolbar_html: 'Good <strong>stuff</strong>.'
-  no_toolbar_html: 'Good <strong>stuff</strong>.'
-  null_html:
-  string_html:
-
+  short_non_resizable_html: Good <strong>stuff</strong>.
+  big_toolbar_html: Good <strong>stuff</strong>.
+  no_toolbar_html: Good <strong>stuff</strong>.
+  null_html: ''
+  string_html: ''
+  required_html: <p>Hello world</p>
+  contains_bold_html: <p><strong>Bold</strong></p>
 _inputs:
   html_input:
     type: html
@@ -63,6 +64,17 @@ _inputs:
   options.null_html:
     options:
       empty_type: 'null'
+  options.required_html:
+    options:
+      empty_type: 'null'
+      required: true
+  options.contains_bold_html:
+    options:
+      empty_type: 'null'
+      pattern: <strong>
+      pattern_message: Must contain some bold text
+      min_length: 10
+      max_length: 40
   options.string_html:
     options:
       empty_type: string
