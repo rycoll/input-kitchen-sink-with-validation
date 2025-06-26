@@ -10,7 +10,8 @@ valid:
 options:
   null_text:
   string_text:
-
+  required_text: Hello
+  five_to_ten_cats_text: 🐱🐱🐈🐱🐈
 _inputs:
   text_input:
     type: text
@@ -29,6 +30,16 @@ _inputs:
   options.null_text:
     options:
       empty_type: 'null'
+  options.required_text:
+    options:
+      empty_type: 'null'
+      required: true
+  options.five_to_ten_cats_text:
+    options:
+      min_length: 5
+      max_length: 10
+      pattern: ^[🐱🐈🐈‍⬛]+$
+      pattern_message: This can only contain cat emojis
   options.string_text:
     options:
       empty_type: string
