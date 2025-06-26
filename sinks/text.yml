@@ -11,7 +11,7 @@ options:
   null_text:
   string_text:
   required_text: Hello
-  five_to_ten_cats_text: 🐱🐱🐈🐱🐈
+  five_to_ten_cats_text: 🐱🐱🐈🐱
 _inputs:
   text_input:
     type: text
